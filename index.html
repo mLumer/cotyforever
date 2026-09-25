@@ -863,12 +863,9 @@
           <span id="loveValue">0</span>%
         </div>
 
-        <input
-          id="loveSlider"
-          type="range"
-          min="0"
-          max="100"
-          value="0"
+        <input type="range" id="loveSlider" min="0" max="100" value="50"> 
+        <p id="lovePercent">50%</p> 
+        <p id="loveMessage">okay, i really really like you</p>
         >
 
         <div class="slider-note">
@@ -1079,20 +1076,33 @@
        LOVE SLIDER
     ========================= */
 
-    const slider = document.getElementById("loveSlider");
-    const loveValue = document.getElementById("loveValue");
+    const loveSlider = document.getElementById("loveSlider");
+const lovePercent = document.getElementById("lovePercent");
+const loveMessage = document.getElementById("loveMessage");
 
-    slider.addEventListener("input", () => {
+function updateLoveSlider() {
+  const value = Number(loveSlider.value);
 
-      const value = slider.value;
+  lovePercent.textContent = value + "%";
 
-      loveValue.textContent = value;
+  if (value <= 20) {
+    loveMessage.textContent = "hmm... is this even love?";
+  } else if (value <= 40) {
+    loveMessage.textContent = "okay, maybe a little...";
+  } else if (value <= 60) {
+    loveMessage.textContent = "wait, i'm starting to like you";
+  } else if (value <= 80) {
+    loveMessage.textContent = "okay, i really really like you";
+  } else if (value < 100) {
+    loveMessage.textContent = "you're becoming my favorite person";
+  } else {
+    loveMessage.textContent = "100% sure, it's always you ♡";
+  }
+}
 
-      if (value == 100) {
-        loveValue.textContent = "∞";
-      }
+loveSlider.addEventListener("input", updateLoveSlider);
 
-    });
+updateLoveSlider();
 
 
     /* =========================

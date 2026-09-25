@@ -1076,13 +1076,13 @@
     ========================= */
 
     const loveSlider = document.getElementById("loveSlider");
-const lovePercent = document.getElementById("lovePercent");
+const loveValue = document.getElementById("loveValue");
 const loveMessage = document.getElementById("loveMessage");
 
 function updateLoveSlider() {
   const value = Number(loveSlider.value);
 
-  lovePercent.textContent = value + "%";
+  loveValue.textContent = value;
 
   if (value <= 20) {
     loveMessage.textContent = "hmm... is this even love?";
@@ -1102,7 +1102,6 @@ function updateLoveSlider() {
 loveSlider.addEventListener("input", updateLoveSlider);
 
 updateLoveSlider();
-
 
     /* =========================
        MUSIC

@@ -442,54 +442,6 @@
        SOUNDTRACK
     ========================= */
 
-    .song {
-      max-width: 650px;
-      margin: auto;
-      padding: 22px;
-      border-radius: 25px;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      box-shadow: 0 12px 35px rgba(120,80,80,.07);
-    }
-
-    .album {
-      width: 65px;
-      height: 65px;
-      border-radius: 18px;
-      object-fit: cover;
-      background: #efd7d8;
-    }
-
-    .song-info {
-      flex: 1;
-    }
-
-    .song-info strong {
-      display: block;
-      font-family: "Playfair Display", serif;
-      font-size: 20px;
-      font-weight: 400;
-    }
-
-    .song-info span {
-      display: block;
-      font-size: 12px;
-      color: #9b8587;
-      margin-top: 5px;
-    }
-
-    .music-button {
-      border: 0;
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      background: #f6dfe1;
-      color: #725759;
-      cursor: pointer;
-    }
-
     /* =========================
        LETTER
     ========================= */
@@ -930,56 +882,6 @@
 
     <!-- SOUNDTRACK -->
 
-    <section>
-
-      <div class="section-label">soundtrack</div>
-
-      <h2 class="section-title">
-        songs that remind me of you.
-      </h2>
-
-      <p class="section-subtitle">
-        because sometimes a song says what words cannot.
-      </p>
-
-      <div class="song">
-
-        <img
-          class="album"
-          src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=300&q=80"
-        >
-
-        <div class="song-info">
-          <strong>our little song</strong>
-          <span>your favorite artist · our soundtrack</span>
-        </div>
-
-        <button
-          class="music-button"
-          onclick="toggleMusic()"
-          id="musicButton"
-        >
-          ▶
-        </button>
-
-      </div>
-
-      <!--
-        GANTI FILE AUDIO DI SINI.
-
-        Buat folder:
-        music/song.mp3
-
-        lalu ubah src menjadi:
-        src="music/song.mp3"
-      -->
-
-      <audio id="music">
-        <source src="music/song.mp3" type="audio/mpeg">
-      </audio>
-
-    </section>
-
 
     <!-- LOVE LETTER -->
 
@@ -1196,27 +1098,6 @@
     /* =========================
        MUSIC
     ========================= */
-
-    const music = document.getElementById("music");
-    const musicButton = document.getElementById("musicButton");
-
-    function toggleMusic() {
-
-      if (music.paused) {
-
-        music.play();
-
-        musicButton.textContent = "Ⅱ";
-
-      } else {
-
-        music.pause();
-
-        musicButton.textContent = "▶";
-
-      }
-
-    }
 
 
     /* =========================
